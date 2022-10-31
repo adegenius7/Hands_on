@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            background-color:aqua
+            border: 4px;
+        }
+        .class1{background-color: red;}
+        .class2{width: 200px; height: 100px;}
+        .addClass{width: 2000px;}
+    </style>
+</head>
+
+<body>
+    <ol>
+        <li id="myList">Toys</li>
+        <li>Chairs</li>
+        <li>Laptops</li>
+        <li>Cups</li>
+    </ol>
+    <button id="btn">Click me!</button>
+    <div id="box" class="class1 class2">
+        <p>This is a paragraph</p>
+    </div>
+    <script>
+        let elm = document.getElementById('myList')
+        let prt = elm.parentElement
+
+        let chilDren = prt.children
+
+        prt.lastElementChild.innerHTML = ("Hello Adenike")
+        let atr = document.getElementById("btn")
+        atr.setAttribute("class", "button")
+        console.log(elm.hasAttribute("class"))
+
+
+        let box = document.getElementById("box")
+        box.classList.add("addClass")
+
+        box.classList.toggle('class2')
+        for(let css of box.classList){
+            console.log(css)
+        }
+        console.log(box.offsetHeight)
+        console.log(box.offsetWidth)
+    </script>
+</body>
+</html>
